@@ -56,6 +56,7 @@ ol {
   margin: 0 auto;
 }
 
+
 /*Header Styles*/
 
 .page-header {
@@ -101,11 +102,25 @@ ol {
   font-weight: 500;
   color: #2e2f42;
   padding: 24px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-link:hover,
 .menu-link:focus {
   color: #404bbf;
+}
+
+.menu-link-span::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404BBF;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  position: absolute;
 }
 
 .contact-list {
@@ -118,12 +133,14 @@ ol {
   font-style: normal;
   font-weight: 400;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-list-link:hover,
 .contact-list-link:focus {
   color: #404bbf;
 }
+
 
 /*Main Content Styles*/
 
@@ -132,6 +149,10 @@ ol {
 .hero {
   background-color: #2e2f42;
   padding: 188px 0 188px;
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), 
+  rgba(46, 47, 66, 0.7)),
+  url('../images/hero-image/people_office.jpg');
+  background-size: cover;
 }
 
 .main-title {
@@ -158,11 +179,13 @@ ol {
   border-radius: 4px;
   border: none;
   min-width: 169px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .order-service-button:hover,
 .order-service-button:focus {
   background-color: #404bbf;
 }
+
 
 /*Our Benefits Styles*/
 
@@ -203,9 +226,22 @@ ol {
   width: calc((100% - 72px) / 4);
 }
 
+.benefits-list-item-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 264px;
+  height: 112px;
+  border-radius: 4px;
+  background-color: #F4F4FD;
+  border: 1px solid #8E8F99;
+  margin-bottom: 8px;
+}
+
 .benefits-list-text {
   font-size: 16px;
 }
+
 
 /*Our Team Styles*/
 
@@ -217,6 +253,9 @@ ol {
 .team-list-item {
   background-color: #ffffff;
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 
+  0px 1px 1px 0px rgba(46, 47, 66, 0.16), 
+  0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .team-list-name {
@@ -252,7 +291,30 @@ ol {
 .team-list-text {
   text-align: center;
   font-size: 16px;
+  margin-bottom: 8px;
 }
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  column-gap: 24px;
+}
+
+.social-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4D5AE5;
+}
+
+.social-list-icon {
+  fill: none;
+  stroke: #F4F4FD;
+}
+
 
 /*Our Portfolio Styles*/
 
@@ -299,8 +361,51 @@ ol {
   font-size: 16px;
 }
 
+.portfolio-list-item {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #F4F4FD;
+  background-color: #4D5AE5;
+  overflow: auto;
+  padding: 40px 32px 164px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-list-item:hover .text-overlay {
+  transform: translateY(0%);
+}
+
+.portfolio-list-item:hover,
+.portfolio-list-item:focus {
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 
+  0px 1px 1px 0px rgba(46, 47, 66, 0.16), 
+  0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
 
 /*Footer Styles*/
+
+.container-page-footer {
+  display: flex;
+  gap: 120px;
+}
 
 .page-footer {
   background-color: #2e2f42;
@@ -327,4 +432,36 @@ ol {
   font-size: 16px;
   color: #f4f4fd;
   width: 264px;
+}
+
+.social-list-title-footer {
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.social-list-footer {
+  display: flex;
+  column-gap: 16px;
+}
+
+.social-list-link-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4D5AE5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-list-link-footer:hover,
+.social-list-link-footer:focus {
+  background-color: #31D0AA;
+}
+
+.social-list-icon-footer {
+  fill: #F4F4FD;
 }
