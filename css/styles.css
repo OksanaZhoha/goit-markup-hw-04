@@ -423,8 +423,11 @@ ol {
 
 .container-page-footer {
   display: flex;
-  gap: 120px;
   align-items: baseline;
+}
+
+.container-footer-logotype {
+  margin-right: 120px;
 }
 
 .page-footer {
@@ -441,7 +444,6 @@ ol {
   text-transform: uppercase;
   color: #4d5ae5;
   display: inline-block;
-  margin-right: 120px;
   margin-bottom: 16px;
 }
 
